@@ -1,0 +1,259 @@
+/* ---- Section Header ---- */
+
+.logo{
+    &__text{
+        max-width: 229px;
+        width: 100%;
+        font-family: "Tinos-Regular";
+        font-style: normal;
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 120%;
+        color: #FFFFFF;
+        padding-left: 20px;
+        padding-top: 5px;
+    }
+
+    &__container{
+        display: flex;
+        flex-direction: row;
+    }
+}
+
+.header{
+    &__bg{
+        background: #FF4B65;
+        height: 70px;
+        width: 100%;
+        max-width: 1920px;
+        margin: 0 auto;
+        position: relative;
+
+        &::before{
+            content: "";
+            position: absolute;
+            top: 0;
+            left: -43px;
+            width: 255px;
+            height: 140px;
+            background-image: url("/assets/images/sheet-top.svg");
+            background-size: 283px 163px;
+        }
+    }
+
+    &__wrapper{
+        display: flex;
+        flex-direction: row;
+        align-items: flex-start;
+        width: 100%;
+        max-width: 1170px;
+        margin: 0 auto;
+        justify-content: space-between;
+        padding-top: 10px;
+    }
+
+    &__info{
+        display: flex;
+        flex-direction: row;
+        position: absolute;
+        right: 376px;
+        top: 23px;
+    }
+
+    &__phone{
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+    }
+
+    &__link{
+        font-family: "Tinos-Regular";
+        font-style: normal;
+        font-weight: 400;
+        font-size: 18px;
+        line-height: 120%;
+        color: #FFFFFF;
+        border-bottom-style: dashed;
+        border-bottom-color: #fff;
+        border-bottom-width: 1px;
+        margin-right: 27px;
+        margin-top: 2px;
+    }
+}
+
+.phone{
+    &__text{
+        font-family: "Tinos-Bold";
+        font-style: normal;
+        font-weight: 700;
+        font-size: 24px;
+        line-height: 120%;
+        color: #FFFFFF;
+    }
+}
+
+/* ---- Section Proposal ---- */
+
+.proposal{
+    position: relative;
+    max-width: 1920px;
+    width: 100%;
+    margin: 0 auto;
+
+    &::before{
+        background-image: url('../../assets/images/bg-proposal.svg');
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        display: block;
+        width: 100%;
+        height: 790px;
+        margin: 0 auto;
+        background-repeat: no-repeat;
+    }
+
+    &__title{
+        font-family: "Alice";
+        font-style: normal;
+        font-weight: 400;
+        font-size: 64px;
+        line-height: 120%;
+        color: #333333;
+        letter-spacing: 3.7px;
+    }
+
+    &__wrapper{
+        position: relative;
+        max-width: 1130px;
+        margin: 0 auto;
+    }
+
+    &__container{
+        display: flex;
+        flex-direction: row;
+    }
+
+    &__box{
+        max-width: 826px;
+        width: 100%;
+        padding: 91px 0px 0px 80px;
+        margin: 0 auto;
+    }
+
+    &__image::before{
+        background-image: url('../../assets/images/bouquet-shadow.svg');
+        background-repeat: no-repeat;
+        content: "";
+        position: absolute;
+        top: 355px;
+        right: 33px;
+        display: block;
+        width: 100%;
+        height: 790px;
+        z-index: -2;
+    }
+
+    &__image::after{
+        background-image: url('../../assets/images/sheet-bg-proposal.svg');
+        background-repeat: no-repeat;
+        content: "";
+        position: absolute;
+        top: 303px;
+        left: 407px;
+        display: block;
+        width: 100%;
+        height: 790px;
+        z-index: -2;
+    }
+
+    &__caption{
+        font-family: "Tinos-Regular";
+        font-style: normal;
+        font-weight: 400;
+        font-size: 42px;
+        line-height: 120%;
+        display: flex;
+        align-items: center;
+        color: #333333;
+    }
+
+    &__holder{
+        padding: 9px;
+        max-width: 772px;
+        width: 100%;
+        max-height: 360px;
+        height: 100%;
+        border: 1px solid #CCCCCC;
+        box-sizing: border-box;
+        border-radius: 10px;
+        position: absolute;
+        right: 15px;
+        top: 302px;
+        z-index: -1;
+    }
+
+    &__inner{
+        max-width: 749px;
+        width: 100%;
+        max-height: 357px;
+        height: 100%;
+        border: 1px solid #CCCCCC;
+        box-sizing: border-box;
+        border-radius: 10px;
+    }
+
+    &__content{
+        padding: 22px 34px 45px 216px;
+    }
+
+    &__caption{
+        max-width: 500px;
+        width: 100%;
+    }
+
+    &__btn{
+        width: 353px;
+        height: 106px;
+        font-weight: 700;
+        font-size: 30px;
+        line-height: 120%;
+        color: #FFFFFF;
+        margin-top: 17px;
+        border-radius: 103px;
+    }
+
+    &__delivery{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        align-items: center;
+        margin-top: 21px;
+    }
+}
+
+.active__text{
+    position: absolute;
+    top: 170px;
+    right: 221px;
+    letter-spacing: 2.8px;
+    font-size: 64px;
+    line-height: 120%;
+    font-family: "Alice";
+    font-style: normal;
+    font-weight: 400;
+    color: #FF4B65;
+}
+
+.delivery{
+    &__text{
+        font-family: "Tinos-Bold";
+        font-style: normal;
+        font-weight: 700;
+        font-size: 28px;
+        line-height: 120%;
+        display: flex;
+        align-items: center;
+        color: #FF4B65
+    }
+}

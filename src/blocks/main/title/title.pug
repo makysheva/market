@@ -1,0 +1,7 @@
+mixin title(className, text, activeText)
+    if(activeText)
+        h1(class= className) #{text}
+        span(class= "active__text") #{activeText}
+
+    else
+        h2(class= className) #{text}

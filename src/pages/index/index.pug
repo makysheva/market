@@ -1,0 +1,76 @@
+extends ../../base
+include ../../blocks/header/menu/menu
+include ../../blocks/main/title/title
+include ../../blocks/main/button/button
+include ../../blocks/main/slider/slider
+
+block title
+    | My Market
+
+block index-page
+    header.header__bg#main
+        .header__wrapper
+            .logo__container
+                img(class='logo' src=require('../../assets/images/logo.svg').default alt='logo')
+                p.logo__text Букеты из фруктов и ягод с доставкой по Москве
+
+            .header__info
+                a(class="header__link" href="#") Заказать в один клик
+                .header__phone
+                    img(class='phone__img' src=require('../../assets/images/phone.svg').default alt='phone')
+                    p.phone__text 8 (999) 888-99-88
+
+            .menu__container
+                nav.menu
+                    ul.menu__list
+                        -
+                            let menuList = [
+                                {title: "Главная", className: "main", link: "#main"},
+                                {title: "Что можно заказать", className: "", link: "#portfolio"},
+                                {title: "Каталог", className: "", link: "#contacts"},
+                                {title: "Подарки", className: "", link: "#contacts"},
+                                {title: "Отзывы", className: "", link: "#contacts"},
+                                {title: "Вопросы клиентов", className: "", link: "#contacts"},
+                                {title: "Доставка и оплата", className: "", link: "#contacts"},
+                            ]
+
+                        each element in menuList
+                            +elementMenu(element)
+    main
+        section.proposal#proposal
+                .proposal__wrapper
+                    .proposal__box
+                        +title('proposal__title', 'Сделайте экзотичный подарок для неё: ', 'Жене')
+
+                    .proposal__container
+                        .proposal__image
+                            img(class="proposal__item" src=require('../../assets/images/bouquet.svg').default, alt="bouquet")
+
+                        .proposal__holder
+                            .proposal__inner
+                                .proposal__content
+                                    h2.proposal__caption Авторские букеты из спелых ягод и фруктов
+                                    +button('proposal__btn', 'Подобрать подарок')
+                                    .proposal__delivery
+                                        img(class="delivery__item" src=require('../../assets/images/car-proposal.svg').default, alt="car-proposal")
+                                        span.delivery__text Бесплатная доставка по Москве
+
+        section.slider__bg
+            img(class="slider__item" src=require('../../assets/images/bg-img-slider.png').default, alt="bg-img-slider")
+            .slider__wrapper
+                +title('slider__title', 'Что вы можете заказать в нашей фруктовой лавке?', '')
+                .slider__container
+                    -
+                        let sliderList = [
+                            {imageMain: 'slider-1.png', altMain: 'slider-1', imageMini: 'mini-slider-1.png', altMini: 'mini-slider-1', title: 'Клубничный букет', slogan: '«Подарок, который невозможно назвать банальным и невозможно не съесть»'},
+                            {imageMain: 'slider-2.png', altMain: 'slider-2', imageMini: 'mini-slider-2.png', altMini: 'mini-slider-2', title: 'Коробка с фруктами и ягодами', slogan: '«Множество кусочков счастья разного вкуса в одной коробке»'},
+                            {imageMain: 'slider-3.png', altMain: 'slider-3', imageMini: 'mini-slider-3.png', altMini: 'mini-slider-3', title: 'Фруктовая корзина', slogan: '«Корзины с флористическим шедевром, показывающие, что фруктов много не бывает»'},
+                            {imageMain: 'slider-4.png', altMain: 'slider-4', imageMini: 'mini-slider-4.png', altMini: 'mini-slider-4', title: 'Нарезка экзотических фруктов', slogan: '«Закажите и попробуете сразу множество необычных фруктов»'},
+                            {imageMain: 'slider-5.png', altMain: 'slider-5', imageMini: 'mini-slider-5.png', altMini: 'mini-slider-5', title: 'Фруктовые стаканчики', slogan: '«Наша попытка уместить весь смак My Market в маленький стаканчик»'},
+                            {imageMain: 'slider-6.png', altMain: 'slider-6', imageMini: 'mini-slider-6.png', altMini: 'mini-slider-6', title: 'Свежевыжатые фреши', slogan: '«Освежитесь натуральными фрешами и зарядитесь витаминчиками»'}
+                        ]
+
+                    each element in sliderList
+                        +slider(element)
+                .slider__slide--second
+                .slider__slide--third

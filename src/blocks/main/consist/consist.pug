@@ -1,0 +1,5 @@
+mixin consist({list})
+    each item in list
+        .consist__box
+            img(class="consist__item" src=require(`../../assets/images/${item.image}`).default, alt=`${item.alt}`)
+            p.consist__text #{item.text}
