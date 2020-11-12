@@ -1,0 +1,5 @@
+mixin advantage(item)
+    div(class="advantage__widget " + item.classWidget)
+        .advantage__inner
+            p.advantage__descr #{item.text}
+        img(class="advantage__icon " + item.className src=require(`../../assets/images/${item.image}`).default, alt=`${item.alt}`)

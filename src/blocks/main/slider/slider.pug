@@ -2,79 +2,78 @@ include ../consist/consist
 include ../button/button
 
 mixin slider(element)
-    .owl-carousel.owl-theme
-        div.slide__wrapper
-            .slide-images__box
-                img(class="slide__image--main" src=require(`../../assets/images/${element.imageMain}`).default, alt=`${element.altMain}`)
-                img(class="slide__image--mini" src=require(`../../assets/images/${element.imageMini}`).default, alt=`${element.altMini}`)
-            .slide__content
-                h2.slide__title #{element.title}
-                p.slide__slogan #{element.slogan}
-                small.slide__small Возможный состав:
-                .consist__container
-                    if(element.altMain==='slider-1')
-                        +consist({
-                            list: [
-                                {image: 'strawberry-mini-consist.png', text: 'Клубника', alt: 'strawberry-mini'},
-                                {image: 'blueberries-mini-consist.png', text: 'Черника', alt: 'blueberries-mini'},
-                                {image: 'mint-mini-consist.png', text: 'Мята', alt: 'mint-mini'},
-                                {image: 'blackberry-mini-consist.png', text: 'Ежевика', alt: 'strawberry-mini'},
-                            ]
-                        })
-                    if(element.altMain==='slider-2')
-                        +consist({
-                            list: [
-                                {image: 'strawberry-mini-consist.png', text: 'Клубника', alt: 'strawberry-mini'},
-                                {image: 'nutella-mini-consist.png', text: 'Нутелла', alt: 'nutella-mini-consist'},
-                                {image: 'cherry-mini-consist.png', text: 'Вишня', alt: 'cherry-mini-consist'},
-                                {image: 'blackberry-mini-consist.png', text: 'Ежевика', alt: 'strawberry-mini'},
-                                {image: 'cherry2-mini-consist.png', text: 'Черешня', alt: 'cherry2-mini-consist'},
-                                {image: 'blueberries-mini-consist.png', text: 'Черника', alt: 'blueberries-mini-consist'},
-                                {image: 'chocolate-mini-consist.png', text: 'Шоколадки', alt: 'chocolate-mini-consist'},
-                                {image: 'mint-mini-consist.png', text: 'Мята', alt: 'mint-mini'}
-                            ]
-                        })
-                    if(element.altMain==='slider-3')
-                        +consist({
-                            list: [
-                                {image: 'coconut-mini-consist.png', text: 'Кокосы', alt: 'coconut-mini'},
-                                {image: 'kiwi-mini-consist.png', text: 'Киви', alt: 'kiwi-mini-consist'},
-                                {image: 'berries-mini-consist.png', text: 'Ягоды', alt: 'berries-mini'},
-                                {image: 'pineapple-mini-consist.png', text: 'Ананасы', alt: 'pineapple-mini'},
-                                {image: 'medlar-mini-consist.png', text: 'Мушмула', alt: 'medlar-mini-consist'},
-                                {image: 'pitaya-mini-consist.png', text: 'Питахайя', alt: 'pitaya-mini'},
-                            ]
-                        })
-                    if(element.altMain==='slider-4')
-                        +consist({
-                            list: [
-                                {image: 'coconut-mini-consist.png', text: 'Кокосы', alt: 'coconut-mini'},
-                                {image: 'kiwi-mini-consist.png', text: 'Киви', alt: 'kiwi-mini-consist'},
-                                {image: 'berries-mini-consist.png', text: 'Ягоды', alt: 'berries-mini'},
-                                {image: 'pineapple-mini-consist.png', text: 'Ананасы', alt: 'pineapple-mini'},
-                                {image: 'medlar-mini-consist.png', text: 'Мушмула', alt: 'medlar-mini-consist'},
-                                {image: 'pitaya-mini-consist.png', text: 'Питахайя', alt: 'pitaya-mini'},
-                            ]
-                        })
-                    if(element.altMain==='slider-5')
-                        +consist({
-                            list: [
-                                {image: 'kiwi-mini-consist.png', text: 'Киви', alt: 'kiwi-mini-consist'},
-                                {image: 'berries-mini-consist.png', text: 'Ягоды', alt: 'berries-mini'},
-                                {image: 'pineapple-mini-consist.png', text: 'Ананасы', alt: 'pineapple-mini'},
-                                {image: 'pitaya-mini-consist.png', text: 'Питахайя', alt: 'pitaya-mini'},
-                            ]
-                        })
-                    if(element.altMain==='slider-6')
-                        +consist({
-                            list: [
-                                {image: 'pineapple-mini-consist.png', text: 'Ананасы', alt: 'pineapple-mini'},
-                                {image: 'grape-mini-consist.png', text: 'Виноград', alt: 'grape-mini-consist'},
-                                {image: 'orange-mini-consist.png', text: 'Апельсины', alt: 'orange-mini-consist'},
-                                {image: 'berries-mini-consist.png', text: 'Ягоды', alt: 'berries-mini'},
-                            ]
-                        })
-                +button('slide__btn', 'Подобрать букет с флористом')
-                .slide__morning
-                    img(class="morning__img" src=require('../../assets/images/morning-mini.png').default, alt="morning-mini")
-                    span.morning__text Закупаем свежие ягоды каждое утро
+    div.slide__wrapper
+        .slide-images__box
+            img(class="slide__image--main" src=require(`../../assets/images/${element.imageMain}`).default, alt=`${element.altMain}`)
+            img(class="slide__image--mini" src=require(`../../assets/images/${element.imageMini}`).default, alt=`${element.altMini}`)
+        .slide__content
+            h2.slide__title #{element.title}
+            p.slide__slogan #{element.slogan}
+            small.slide__small Возможный состав:
+            .consist__container
+                if(element.altMain==='slider-1')
+                    +consist({
+                        list: [
+                            {image: 'strawberry-mini-consist.png', text: 'Клубника', alt: 'strawberry-mini'},
+                            {image: 'blueberries-mini-consist.png', text: 'Черника', alt: 'blueberries-mini'},
+                            {image: 'mint-mini-consist.png', text: 'Мята', alt: 'mint-mini'},
+                            {image: 'blackberry-mini-consist.png', text: 'Ежевика', alt: 'strawberry-mini'},
+                        ]
+                    })
+                if(element.altMain==='slider-2')
+                    +consist({
+                        list: [
+                            {image: 'strawberry-mini-consist.png', text: 'Клубника', alt: 'strawberry-mini'},
+                            {image: 'nutella-mini-consist.png', text: 'Нутелла', alt: 'nutella-mini-consist'},
+                            {image: 'cherry-mini-consist.png', text: 'Вишня', alt: 'cherry-mini-consist'},
+                            {image: 'blackberry-mini-consist.png', text: 'Ежевика', alt: 'strawberry-mini'},
+                            {image: 'cherry2-mini-consist.png', text: 'Черешня', alt: 'cherry2-mini-consist'},
+                            {image: 'blueberries-mini-consist.png', text: 'Черника', alt: 'blueberries-mini-consist'},
+                            {image: 'chocolate-mini-consist.png', text: 'Шоколадки', alt: 'chocolate-mini-consist'},
+                            {image: 'mint-mini-consist.png', text: 'Мята', alt: 'mint-mini'}
+                        ]
+                    })
+                if(element.altMain==='slider-3')
+                    +consist({
+                        list: [
+                            {image: 'coconut-mini-consist.png', text: 'Кокосы', alt: 'coconut-mini'},
+                            {image: 'kiwi-mini-consist.png', text: 'Киви', alt: 'kiwi-mini-consist'},
+                            {image: 'berries-mini-consist.png', text: 'Ягоды', alt: 'berries-mini'},
+                            {image: 'pineapple-mini-consist.png', text: 'Ананасы', alt: 'pineapple-mini'},
+                            {image: 'medlar-mini-consist.png', text: 'Мушмула', alt: 'medlar-mini-consist'},
+                            {image: 'pitaya-mini-consist.png', text: 'Питахайя', alt: 'pitaya-mini'},
+                        ]
+                    })
+                if(element.altMain==='slider-4')
+                    +consist({
+                        list: [
+                            {image: 'coconut-mini-consist.png', text: 'Кокосы', alt: 'coconut-mini'},
+                            {image: 'kiwi-mini-consist.png', text: 'Киви', alt: 'kiwi-mini-consist'},
+                            {image: 'berries-mini-consist.png', text: 'Ягоды', alt: 'berries-mini'},
+                            {image: 'pineapple-mini-consist.png', text: 'Ананасы', alt: 'pineapple-mini'},
+                            {image: 'medlar-mini-consist.png', text: 'Мушмула', alt: 'medlar-mini-consist'},
+                            {image: 'pitaya-mini-consist.png', text: 'Питахайя', alt: 'pitaya-mini'},
+                        ]
+                    })
+                if(element.altMain==='slider-5')
+                    +consist({
+                        list: [
+                            {image: 'kiwi-mini-consist.png', text: 'Киви', alt: 'kiwi-mini-consist'},
+                            {image: 'berries-mini-consist.png', text: 'Ягоды', alt: 'berries-mini'},
+                            {image: 'pineapple-mini-consist.png', text: 'Ананасы', alt: 'pineapple-mini'},
+                            {image: 'pitaya-mini-consist.png', text: 'Питахайя', alt: 'pitaya-mini'},
+                        ]
+                    })
+                if(element.altMain==='slider-6')
+                    +consist({
+                        list: [
+                            {image: 'pineapple-mini-consist.png', text: 'Ананасы', alt: 'pineapple-mini'},
+                            {image: 'grape-mini-consist.png', text: 'Виноград', alt: 'grape-mini-consist'},
+                            {image: 'orange-mini-consist.png', text: 'Апельсины', alt: 'orange-mini-consist'},
+                            {image: 'berries-mini-consist.png', text: 'Ягоды', alt: 'berries-mini'},
+                        ]
+                    })
+            +button('slide__btn', 'Подобрать букет с флористом')
+            .slide__morning
+                img(class="morning__img" src=require('../../assets/images/morning-mini.png').default, alt="morning-mini")
+                span.morning__text Закупаем свежие ягоды каждое утро

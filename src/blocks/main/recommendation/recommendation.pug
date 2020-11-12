@@ -1,0 +1,7 @@
+mixin recommendation(element)
+    .recommendation__img
+        img(class="recommendation__item" src=require(`../../assets/images/${element.image}`).default, alt=`${element.alt}`)
+    .recommendation__list
+        h3.recommendation__subtitle #{element.title}
+        p.recommendation__text #{element.text}
+    .recommendation__stripe
