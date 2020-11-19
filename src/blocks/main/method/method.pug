@@ -1,0 +1,12 @@
+mixin method(element)
+    .method__inner
+        .method__number #{element.number}
+        img(class="method__img" src=require(`../../assets/images/${element.image}`).default, alt=`${element.alt}`)
+        .method__caption #{element.caption}
+        hr
+        if(element.alt==='method-img-1')
+            .method__text Вы&#160;
+                span.method__text--meta оставляете заявку&#160;
+                span на сайте или звоните нам: 8 (989) 909-99-89
+        else
+            .method__text #{element.instruction}

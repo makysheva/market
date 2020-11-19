@@ -1,0 +1,117 @@
+// .method{
+//     &__bg{
+//         background: url('../../../assets/images/method-bg.svg') no-repeat,
+//                 #FF4B65 no-repeat 100% 0;
+//         max-width: 1920px;
+//         width: 100%;
+//         margin: 0 auto;
+//         padding-bottom: 93px;
+//     }
+
+//     &__wrapper{
+//         max-width: 1135px;
+//         width: 100%;
+//         display: flex;
+//         flex-direction: row;
+//         margin: 0 auto;
+//         position: relative;
+//     }
+
+//     &__inner{
+//         max-width: 215px;
+//         width: 100%;
+//         background: #FFFFFF;
+//         box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.06);
+//         border-radius: 10px;
+//         margin-right: 15px;
+//         margin-bottom: 15px;
+//         flex-wrap: wrap;
+
+//         &:last-child{
+//             margin-right: 0;
+//         }
+
+//         & hr{
+//             background-color:#E5E5E5;
+//         }
+
+//         &::before{
+//             background: url('../../../assets/images/method-berry-down.svg') no-repeat;
+//             background-size: 140px 140px;
+//             width: 140px;
+//             position: absolute;
+//             content: "";
+//             top: 93%;
+//             left: -8%;
+//             height: 140px;
+//         }
+
+//         &::after{
+//             background: url('../../../assets/images/method-berry-up.svg') no-repeat;
+//             background-size: 230px 229px;
+//             width: 230px;
+//             position: absolute;
+//             content: "";
+//             top: -36%;
+//             right: -14%;
+//             height: 229px;
+//         }
+//     }
+
+//     &__number{
+//         width: 40px;
+//         height: 40px;
+//         background: #FFFFFF;
+//         box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.06);
+//         font-weight: 700;
+//         font-size: 18px;
+//         line-height: 21px;
+//         text-align: center;
+//         color: #FF4B65;
+//         border-radius: 50%;
+//         padding-top: 11px;
+//         margin: -13px auto;
+//     }
+
+//     &__title{
+//         font-family: "Alice";
+//         font-style: normal;
+//         font-weight: 400;
+//         font-size: 64px;
+//         line-height: 120%;
+//         display: flex;
+//         align-items: center;
+//         color: #FFFFFF;
+//         text-shadow: 0px 4px 6px rgba(0, 0, 0, 0.06);
+//         padding: 50px 0;
+//         justify-content: center;
+//     }
+
+//     &__img{
+//         max-width: 120px;
+//         width: 100%;
+//         margin: 41px 0 20px 47px;
+//     }
+
+//     &__caption{
+//         font-weight: 700;
+//         font-size: 18px;
+//         line-height: 21px;
+//         color: #333333;
+//         text-align: center;
+//         padding-bottom: 15px;
+//     }
+
+//     &__text{
+//         padding: 0px 5px 20px 5px;
+//         font-size: 18px;
+//         line-height: 21px;
+//         text-align: center;
+//         color: #333333;
+
+//         &--meta{
+//             color: #FF4B65;
+//             border-bottom: 1px solid #FF4B65;
+//         }
+//     }
+// }

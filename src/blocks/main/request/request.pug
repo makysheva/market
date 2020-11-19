@@ -1,4 +1,4 @@
 mixin request({list})
     each item in list
-        a(class="request__link ") #{item.title}
+        a(class="request__link " + item.className) #{item.title}
             img(class= item.className, src=require(`../../assets/images/${item.image}`).default, alt=`${item.alt}`)

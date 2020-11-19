@@ -3,7 +3,7 @@ import '../../../index';
 
 
 $(document).ready(function() {
-  $('.owl-carousel').owlCarousel({
+  $(".slider-one").owlCarousel({
     margin:10,
     nav: false,
     loop: true,

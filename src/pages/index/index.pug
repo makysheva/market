@@ -6,6 +6,10 @@ include ../../blocks/main/slider/slider
 include ../../blocks/main/advantage/advantage
 include ../../blocks/main/request/request
 include ../../blocks/main/recommendation/recommendation
+include ../../blocks/main/catalog-slider/catalog-slider
+include ../../blocks/main/feedback/feedback
+include ../../blocks/main/accordion/accordion
+include ../../blocks/main/method/method
 
 block title
     | My Market
@@ -13,15 +17,16 @@ block title
 block index-page
     header.header__bg#main
         .header__wrapper
-            .logo__container
-                img(class='logo' src=require('../../assets/images/logo.svg').default alt='logo')
-                p.logo__text Букеты из фруктов и ягод с доставкой по Москве
+            .header__inner
+                .logo__container
+                    img(class='logo' src=require('../../assets/images/logo.svg').default alt='logo')
+                    p.logo__text Букеты из фруктов и ягод с доставкой по Москве
 
-            .header__info
-                a(class="header__link" href="#") Заказать в один клик
-                .header__phone
-                    img(class='phone__img' src=require('../../assets/images/phone.svg').default alt='phone')
-                    p.phone__text 8 (999) 888-99-88
+                .header__info
+                    a(class="header__link" href="#") Заказать в один клик
+                    .header__phone
+                        img(class='phone__img' src=require('../../assets/images/phone.svg').default alt='phone')
+                        p.phone__text 8 (999) 888-99-88
 
             .menu__container
                 nav.menu
@@ -39,116 +44,227 @@ block index-page
 
                         each element in menuList
                             +elementMenu(element)
-    main
-        section.proposal#proposal
-                .proposal__wrapper
-                    .proposal__box
-                        +title('proposal__title', 'Сделайте экзотичный подарок для неё: ', 'Жене')
+    //- main.main
+    //-     section.proposal#proposal
+    //-             .proposal__wrapper
+    //-                 .proposal__box
+    //-                     span.proposal__title Сделайте экзотичный подарок для неё:
+    //-                     span.proposal__title--meta Жене
 
-                    .proposal__container
-                        .proposal__image
-                            img(class="proposal__item" src=require('../../assets/images/bouquet.svg').default, alt="bouquet")
+    //-                 .proposal__container
+    //-                     .proposal__image
+    //-                         img(class="proposal__item" src=require('../../assets/images/bouquet.svg').default, alt="bouquet")
 
-                        .proposal__holder
-                            .proposal__inner
-                                .proposal__content
-                                    h2.proposal__caption Авторские букеты из спелых ягод и фруктов
-                                    +button('proposal__btn', 'Подобрать подарок')
-                                    .proposal__delivery
-                                        img(class="delivery__item" src=require('../../assets/images/car-proposal.svg').default, alt="car-proposal")
-                                        span.delivery__text Бесплатная доставка по Москве
+    //-                     .proposal__holder
+    //-                         .proposal__inner
+    //-                             .proposal__content
+    //-                                 h2.proposal__caption Авторские букеты из спелых ягод и фруктов
+    //-                                 +button('proposal__btn', 'Подобрать подарок')
+    //-                                 .proposal__delivery
+    //-                                     img(class="delivery__item" src=require('../../assets/images/car-proposal.svg').default, alt="car-proposal")
+    //-                                     span.delivery__text Бесплатная доставка по Москве
 
-        section.slider__bg
-            img(class="slider__item" src=require('../../assets/images/bg-img-slider.png').default, alt="bg-img-slider")
-            .slider__wrapper
-                +title('slider__title', 'Что вы можете заказать в нашей фруктовой лавке?', '')
-                .slider__container
-                    .slider__nav
-                        .owl-carousel.owl-theme
-                            -
-                                let sliderList = [
-                                    {imageMain: 'slider-1.png', altMain: 'slider-1', imageMini: 'mini-slider-1.png', altMini: 'mini-slider-1', title: 'Клубничный букет', slogan: '«Подарок, который невозможно назвать банальным и невозможно не съесть»'},
-                                    {imageMain: 'slider-2.png', altMain: 'slider-2', imageMini: 'mini-slider-2.png', altMini: 'mini-slider-2', title: 'Коробка с фруктами и ягодами', slogan: '«Множество кусочков счастья разного вкуса в одной коробке»'},
-                                    {imageMain: 'slider-3.png', altMain: 'slider-3', imageMini: 'mini-slider-3.png', altMini: 'mini-slider-3', title: 'Фруктовая корзина', slogan: '«Корзины с флористическим шедевром, показывающие, что фруктов много не бывает»'},
-                                    {imageMain: 'slider-4.png', altMain: 'slider-4', imageMini: 'mini-slider-4.png', altMini: 'mini-slider-4', title: 'Нарезка экзотических фруктов', slogan: '«Закажите и попробуете сразу множество необычных фруктов»'},
-                                    {imageMain: 'slider-5.png', altMain: 'slider-5', imageMini: 'mini-slider-5.png', altMini: 'mini-slider-5', title: 'Фруктовые стаканчики', slogan: '«Наша попытка уместить весь смак My Market в маленький стаканчик»'},
-                                    {imageMain: 'slider-6.png', altMain: 'slider-6', imageMini: 'mini-slider-6.png', altMini: 'mini-slider-6', title: 'Свежевыжатые фреши', slogan: '«Освежитесь натуральными фрешами и зарядитесь витаминчиками»'}
-                                ]
+    //-     section.slider__bg
+    //-         .slider__wrapper
+    //-             +title('slider__title', 'Что вы можете заказать в нашей фруктовой лавке?', '')
+    //-             .slider__container
+    //-                 .slider__nav
+    //-                     .owl-carousel.owl-theme.slider-one
+    //-                         -
+    //-                             let sliderList = [
+    //-                                 {imageMain: 'slider-1.png', altMain: 'slider-1', imageMini: 'mini-slider-1.png', altMini: 'mini-slider-1', title: 'Клубничный букет', slogan: '«Подарок, который невозможно назвать банальным и невозможно не съесть»'},
+    //-                                 {imageMain: 'slider-2.png', altMain: 'slider-2', imageMini: 'mini-slider-2.png', altMini: 'mini-slider-2', title: 'Коробка с фруктами и ягодами', slogan: '«Множество кусочков счастья разного вкуса в одной коробке»'},
+    //-                                 {imageMain: 'slider-3.png', altMain: 'slider-3', imageMini: 'mini-slider-3.png', altMini: 'mini-slider-3', title: 'Фруктовая корзина', slogan: '«Корзины с флористическим шедевром, показывающие, что фруктов много не бывает»'},
+    //-                                 {imageMain: 'slider-4.png', altMain: 'slider-4', imageMini: 'mini-slider-4.png', altMini: 'mini-slider-4', title: 'Нарезка экзотических фруктов', slogan: '«Закажите и попробуете сразу множество необычных фруктов»'},
+    //-                                 {imageMain: 'slider-5.png', altMain: 'slider-5', imageMini: 'mini-slider-5.png', altMini: 'mini-slider-5', title: 'Фруктовые стаканчики', slogan: '«Наша попытка уместить весь смак My Market в маленький стаканчик»'},
+    //-                                 {imageMain: 'slider-6.png', altMain: 'slider-6', imageMini: 'mini-slider-6.png', altMini: 'mini-slider-6', title: 'Свежевыжатые фреши', slogan: '«Освежитесь натуральными фрешами и зарядитесь витаминчиками»'}
+    //-                             ]
 
-                            each element in sliderList
-                                +slider(element)
-                .slider__slide--second
-                .slider__slide--third
+    //-                         each element in sliderList
+    //-                             +slider(element)
+    //-             .slider__slide
 
-        section.advantage__bg
-            .advantage__wrapper
-                h2.advantage__title.advantage__title--main Букетом цветов уже
-                    span.advantage__title--meta &#160;не удивишь&#160;
-                h2.advantage__title.advantage__title--submain А у нас:
+    //-     section.advantage__bg
+    //-         .advantage__wrapper
+    //-             .advantage__row
+    //-                 span.advantage__title--main Букетом цветов уже
+    //-                 span.advantage__title--meta &#160;не удивишь&#160;
+    //-                 span.advantage__title.advantage__title--submain А у нас:
 
-                .advantage__content
-                    .advantage__bouquet
-                        img(class="advantage__bouquet-img" src=require('../../assets/images/advantage-img.svg').default, alt="advantage-img")
-                        .ellipse
-                .advantage__box
-                    -
-                        let widgetList = [
-                            {text: 'Ягоды гораздо фотогениченее, чем цветы. Ваши подарки точно попадут в instagram ;)', image: 'advantage-icon-photo.svg', alt: 'advantage-icon-photo', className: 'advantage__icon--photo', classWidget: 'advantage__inner--photo'},
-                            {text: 'Цветы чаще всего из вашего города, а наши фрукты и ягоды из Южной Америки', image: 'advantage-icon-world.svg', alt: 'advantage-icon-world', className: 'advantage__icon--world', classWidget: 'advantage__inner--world'},
-                            {text: 'Весь букет съедят! а не выбросят как засохшие цветы', image: 'advantage-icon-like.svg', alt: 'advantage-icon-like', className: 'advantage__icon--like', classWidget: 'advantage__inner--like'},
-                            {text: 'Букет не только пахнет, но и полезен витаминчиками', image: 'advantage-icon-plus.svg', alt: 'advantage-icon-plus', className: 'advantage__icon--plus', classWidget: 'advantage__inner--plus'},
-                        ]
-                    each widgetItem in widgetList
-                        +advantage(widgetItem)
+    //-                 .advantage__content
+    //-                     .advantage__bouquet
+    //-                         img(class="advantage__bouquet-img" src=require('../../assets/images/advantage-img.svg').default, alt="advantage-img")
+    //-                         .ellipse
+    //-                 .advantage__box
+    //-                     -
+    //-                         let widgetList = [
+    //-                             {text: 'Ягоды гораздо фотогениченее, чем цветы. Ваши подарки точно попадут в instagram ;)', image: 'advantage-icon-photo.svg', alt: 'advantage-icon-photo', className: 'advantage__icon--photo', classWidget: 'advantage__inner--photo'},
+    //-                             {text: 'Цветы чаще всего из вашего города, а наши фрукты и ягоды из Южной Америки', image: 'advantage-icon-world.svg', alt: 'advantage-icon-world', className: 'advantage__icon--world', classWidget: 'advantage__inner--world'},
+    //-                             {text: 'Весь букет съедят! а не выбросят как засохшие цветы', image: 'advantage-icon-like.svg', alt: 'advantage-icon-like', className: 'advantage__icon--like', classWidget: 'advantage__inner--like'},
+    //-                             {text: 'Букет не только пахнет, но и полезен витаминчиками', image: 'advantage-icon-plus.svg', alt: 'advantage-icon-plus', className: 'advantage__icon--plus', classWidget: 'advantage__inner--plus'},
+    //-                         ]
+    //-                     each widgetItem in widgetList
+    //-                         +advantage(widgetItem)
 
-        section.video__bg
-            img(class="video__bg-wave" src=require('../../assets/images/wave-up-video.svg').default, alt="wave-up-video")
-            img(class="video__bg-img" src=require('../../assets/images/video-bg.png').default, alt="video-bg")
-            .video__wrapper
-                .video__btn
-                    img(class="video__play-img" src=require('../../assets/images/play-video.svg').default, alt="play-video")
-                    .video__ellipse
-                .video__content
-                    .video__title My Market — искусство радовать любимых
-                    .video__text Посмотрите видео о том, как мы создаем букеты
+    //-     section.video__bg
+    //-         .video__wrapper
+    //-             .video__btn
+    //-                 img(class="video__play-img" src=require('../../assets/images/play-video.svg').default, alt="play-video")
+    //-                 .video__ellipse
+    //-             .video__content
+    //-                 .video__title My Market — искусство радовать любимых
+    //-                 .video__text Посмотрите видео о том, как мы создаем букеты
 
-        section.request__bg
-            img(class="request__bg-img" src=require('../../assets/images/request-bg.svg').default, alt="request-bg")
-            .request__content
-                .request__inner
-                    .request__form
-                        form(action="")
-                            h3.request__title Наш флорист&#160;
-                                b подберёт&#160;
-                                span для Вас подарок по цене, размеру и составу
-                            p.request__small Выберите удобный способ связи:
-                            .request__connection
-                                +request({
-                                    list: [
-                                        {image: 'request-phone.svg', alt: 'phone', className: 'request__link--phone', title: 'Телефон'},
-                                        {image: 'request-telegram.svg', alt: 'telegram', className: 'request__link--telegram', title: 'Telegram'},
-                                        {image: 'request-whatsapp.svg', alt: 'whatsapp', className: 'request__link--whatsapp', title: 'WhatsApp'},
-                                    ]
-                                })
-                            input(class="request__input" type="text" placeholder="Введите Ваш WhatsApp")
-                            +button('request__btn', 'Оставить заявку')
-                            small.request__small-text Нажимая кнопку, Вы принимаете Положение и Согласие на обработку персональных данных.
-                .request__slides
-                    .request__slides-inner
-                        .request__slide--second
-                        .request__slide--third
+    //-     section.request__bg
+    //-         //-img(class="request__bg-img" src=require('../../assets/images/request-bg.svg').default, alt="request-bg")
+    //-         .request__content
+    //-             .request__inner
+    //-                 .request__form
+    //-                     form(action="")
+    //-                         h3.request__title Наш флорист&#160;
+    //-                             b подберёт&#160;
+    //-                             span для Вас подарок по цене, размеру и составу
+    //-                         p.request__small Выберите удобный способ связи:
+    //-                         .request__connection
+    //-                             +request({
+    //-                                 list: [
+    //-                                     {image: 'request-phone.svg', alt: 'phone', className: 'request__link--phone', title: 'Телефон'},
+    //-                                     {image: 'request-telegram.svg', alt: 'telegram', className: 'request__link--telegram', title: 'Telegram'},
+    //-                                     {image: 'request-whatsapp.svg', alt: 'whatsapp', className: 'request__link--whatsapp', title: 'WhatsApp'},
+    //-                                 ]
+    //-                             })
+    //-                         input(class="request__input" type="text" placeholder="Введите Ваш WhatsApp")
+    //-                         +button('request__btn', 'Оставить заявку')
+    //-                         small.request__small-text Нажимая кнопку, Вы принимаете Положение и Согласие на обработку персональных данных.
+    //-             .request__slides
 
-        section.recommendation__wrapper
-            h2.recommendation__title.recommendation__title--meta Будьте оригинальными
-            h2.recommendation__title с My Market
-            p.recommendation__descr Мы советуем:
-            .recommendation__stripe
-            .recommendation__content
-                -
-                    let recommendationList = [
-                        {image: 'recommendation-image-1.png', alt: 'recommendation-image-1', className: 'recommendation__image-1', title: 'Вкусное дополнение к дорогому подарку', text: 'Ваши подарки любимым станут еще красивее и приятнее с оформление от My Market'},
-                        {image: 'recommendation-image-2.png', alt: 'recommendation-image-2', className: 'recommendation__image-2', title: 'Если надоели однообразные закуски', text: 'Свежие нарезки и стаканчики с экзотическими фруктами сделают ваш фуршет или свадьбу особенными'},
-                        {image: 'recommendation-image-3.png', alt: 'recommendation-image-3', className: 'recommendation__image-3', title: 'Прекрасный романтический подарок', text: 'Большинство наших продаж — подарки второй половинке. По вашей просьбе, мы напишем записку с вашим текстом на специальной красивой открытке'}
-                    ]
-                each element in recommendationList
-                    +recommendation(element)
+    //-     section.recommendation__wrapper
+    //-         h2.recommendation__title.recommendation__title--meta Будьте оригинальными
+    //-         h2.recommendation__title с My Market
+    //-         p.recommendation__descr Мы советуем:
+    //-         .recommendation__stripe
+    //-         .recommendation__content
+    //-             -
+    //-                 let recommendationList = [
+    //-                     {image: 'recommendation-image-1.png', alt: 'recommendation-image-1', className: 'recommendation__image-1', titleClassName: 'recommendation__subtitle--1', title: 'Вкусное дополнение к дорогому подарку', textClassName: 'recommendation__text--1', text: 'Ваши подарки любимым станут еще красивее и приятнее с оформление от My Market', innerClassName: ''},
+    //-                     {image: 'recommendation-image-2.png', alt: 'recommendation-image-2', className: 'recommendation__image-2', titleClassName: 'recommendation__subtitle--2', title: 'Если надоели однообразные закуски', textClassName: 'recommendation__text--2', text: 'Свежие нарезки и стаканчики с экзотическими фруктами сделают ваш фуршет или свадьбу особенными', innerClassName: 'recommendation__inner--2'},
+    //-                     {image: 'recommendation-image-3.png', alt: 'recommendation-image-3', className: 'recommendation__image-3', titleClassName: 'recommendation__subtitle--3', title: 'Прекрасный романтический подарок', textClassName: 'recommendation__text--3', text: 'Большинство наших продаж — подарки второй половинке. По вашей просьбе, мы напишем записку с вашим текстом на специальной красивой открытке', innerClassName: ''}
+    //-                 ]
+    //-             each element in recommendationList
+    //-                 +recommendation(element)
+
+    //-     section.catalog__bg
+    //-         .catalog__wrapper
+    //-             .catalog__inner
+    //-                 .catalog__content
+    //-                     h2.catalog__title Закажите прямо сейчас и мы доставим до двери
+    //-                     p.catalog__text Доставка по Москве в пределах МКАД&#160;
+    //-                         b бесплатно!
+    //-                 .owl-carousel.owl-theme.slider-two
+    //-                         -
+    //-                             let catalogSliderList = [
+    //-                                 {imageMain: 'catalog-img-1.png', altMain: 'catalog-img-1', title: 'Букет «Аделина»', structureText: 'Клубника, черника, мята', sizeText: 'Ø 25 см'},
+    //-                                 {imageMain: 'catalog-img-2.png', altMain: 'catalog-img-2', title: 'Букет «Амброзия»', structureText: 'Голубика, ежевика, шоколад', sizeText: 'Ø 33 см'},
+    //-                                 {imageMain: 'catalog-img-3.png', altMain: 'catalog-img-3', title: 'Букет «Эссенс»', structureText: 'Клубника, ежевика', sizeText: 'Ø 55 см'}
+    //-                             ]
+
+    //-                         each element in catalogSliderList
+    //-                             +catalogSlider(element)
+    //-                 .catalog__control
+    //-                     .catalog__control-item Ягодные букеты
+    //-                     .catalog__control--circle
+    //-                     .catalog__control--circle
+
+    //-     section.feedback__bg
+    //-         .feedback__wrapper
+    //-             .feedback__form-content
+    //-                 h2.feedback__form-title Если вам ничего не понравилось
+    //-                 p.feedback__form-text Закажите индивидуальный букет, если вам не по вкусу наши стандартные композиции. Заполните форму и наши флористы удовлетворят все ваши запросы:
+    //-             form.feedback__form(action="")
+    //-                 .feedback__form-forms
+    //-                     input(class="feedback__input-name feedback__input-icon" type="text" placeholder="Ваше имя")
+    //-                     input(class="feedback__input-phone feedback__input-mobile" type="tel" pattern="2[0-9]{3}-[0-9]{3}" placeholder="+7 (___) ___ __ __")
+    //-                     textarea(name="message", cols="30", rows="10" class="feedback__textarea" placeholder="Пожелания по букету...")
+    //-                 .feedback__form-box
+    //-                     .feedback__form--control
+    //-                         +button('feedback__button', 'Перезвоните мне')
+    //-                         p.feedback__small Нажимая кнопку, Вы принимаете Положение и Согласие на обработку персональных данных.
+    //-                     .feedback__form-inner
+    //-                         p.feedback__mobile 8 (999) 888-99-88
+    //-                         .feedback__wrap
+    //-                             p.feedback__mobile-text или напишите нам:
+    //-                             +request({
+    //-                                 list: [
+    //-                                     {image: 'feedback-telegram.png', alt: 'telegram', className: 'feedback__telegram', title: ''},
+    //-                                     {image: 'feedback-whatsapp.png', alt: 'whatsapp', className: 'request__whatsapp', title: ''},
+    //-                                 ]
+    //-                             })
+    //-         h2.feedback__title--meta Наши клиенты&#160;
+    //-             span.feedback__title делятся с нами эмоциями
+    //-         .feedback__nav
+    //-         .owl-carousel.owl-theme.slider-three
+    //-                 -
+    //-                     let feedbackSliderList = [
+    //-                         {image: 'feedback-phone.svg', alt: 'feedback-phone'},
+    //-                         {image: 'feedback-phone.svg', alt: 'feedback-phone'},
+    //-                         {image: 'feedback-phone.svg', alt: 'feedback-phone'},
+    //-                         {image: 'feedback-phone.svg', alt: 'feedback-phone'},
+    //-                         {image: 'feedback-phone.svg', alt: 'feedback-phone'},
+    //-                         {image: 'feedback-phone.svg', alt: 'feedback-phone'}
+    //-                     ]
+
+    //-                 each element in feedbackSliderList
+    //-                     +feedbackSlider(element)
+
+    //-     section.issue__bg
+    //-         +title('issue__title', 'Частые вопросы перед покупкой', '')
+    //-         .accordion__wrapper
+    //-             -
+    //-                 let accordionList = [
+    //-                     {icon: 'issue-money-icon.svg', alt: 'money', title: 'Обычные фрукты, почему так дорого?', className: 'accordion__icon--money'},
+    //-                     {icon: 'issue-strawberry-icon.svg', alt: 'strawberry', title: 'От клубники не будет вытекать сок?', className: 'accordion__icon--strawberry'},
+    //-                     {icon: 'issue-bouquet-icon.svg', alt: 'bouquet', title: 'Букет не разваливается?', className: 'accordion__icon--bouquet'},
+    //-                     {icon: 'issue-time-icon.svg', alt: 'time', title: 'Как долго ждать изготовления композиции?', className: 'accordion__icon--time'},
+    //-                     {icon: 'issue-car-icon.svg', alt: 'car', title: 'Можно ли самому и откуда забрать заказ?', className: 'accordion__icon--car'}
+    //-                 ]
+    //-             each element in accordionList
+    //-                 +accordion(element)
+
+    //-     section.method__bg
+    //-         +title('method__title', 'Заказывайте легко')
+    //-         .method__wrapper
+    //-             -
+    //-                 let methodList = [
+    //-                     {number: '1', image: 'method-img-1.svg', alt: 'method-img-1', caption: 'Звонок/заявка', instruction: ''},
+    //-                     {number: '2', image: 'method-img-2.svg', alt: 'method-img-2', caption: 'Уточняем детали', instruction: 'Флорист согласовывает персональные элементы фотографиями'},
+    //-                     {number: '3', image: 'method-img-3.svg', alt: 'method-img-3', caption: 'Подтверждение заказа', instruction: 'Флорист подтверждаете заявку, согласовывает адрес и время доставки'},
+    //-                     {number: '4', image: 'method-img-4.svg', alt: 'method-img-4', caption: 'Доставка и оплата', instruction: 'Оплачиваете заказ на карту или курьеру при получении'},
+    //-                     {number: '5', image: 'method-img-5.svg', alt: 'method-img-5', caption: 'Эмоции', instruction: 'Радуетесь своей покупке и радуете близких подарком :)'}
+    //-                 ]
+    //-             each element in methodList
+    //-                 +method(element)
+
+    //-     section.suggestion__wrapper
+    //-         .suggestion__inner
+    //-             .suggestion__title Сайт уже закончился :(
+    //-             .suggestion__text
+    //-                 span.suggestion__text--meta Попробуйте заказать&#160;
+    //-                 span что-нибудь из нашей лавки и порадовать своих близких уже сегодня!
+    //-             +button('suggestion__btn', 'Хочу попробовать')
+
+    //-     footer.footer__wrapper
+    //-         .footer__inner
+    //-             .footer__content
+    //-                 p.footer__text Букеты из фруктов и ягод с доставкой по Москве
+    //-                 a(href="#" class="footer__link") Политика конфиденциальности
+    //-                 p.footer__copyright &#169; My Market 2014-2020
+    //-             .footer__logo
+    //-                 img(class='logo' src=require('../../assets/images/logo.svg').default alt='logo')
+    //-             .footer__info
+    //-                 .footer__phone
+    //-                     img(class='phone__img' src=require('../../assets/images/phone.svg').default alt='phone')
+    //-                     p.phone__text 8 (999) 888-99-88
+    //-                 a(class="footer__link--phone" href="#") Заказать в один клик
+    //-                 p.footer__email @mymarket_moscow
+    //-                 p.footer__address Адрес: Москва, ул. лалалал
+

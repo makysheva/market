@@ -1,0 +1,18 @@
+mixin accordion(element)
+    div(class="wrapper")
+        div(class="accordion")
+            div(class="accordion-item")
+                .accordion-item__trigger
+                    if(element.alt==='money')
+                        .accordion-item__icon.accordion-item__icon--money
+                    if(element.alt==='strawberry')
+                        .accordion-item__icon.accordion-item__icon--strawberry
+                    if(element.alt==='bouquet')
+                        .accordion-item__icon.accordion-item__icon--bouquet
+                    if(element.alt==='time')
+                        .accordion-item__icon.accordion-item__icon--time
+                    if(element.alt==='car')
+                        .accordion-item__icon.accordion-item__icon--car
+                    .accordion-item__title #{element.title}
+                    .accordion-item__icon--arrow
+                .accordion-item__content Равным образом новая модель организационной деятельности позволяет оценить значение новых предложений. Разнообразный и богатый опыт постоянный количественный рост и сфера нашей активности позволяет выполнять важные задания по разработке соответствующий.

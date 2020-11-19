@@ -1,7 +1,16 @@
 mixin recommendation(element)
-    .recommendation__img
-        img(class="recommendation__item" src=require(`../../assets/images/${element.image}`).default, alt=`${element.alt}`)
-    .recommendation__list
-        h3.recommendation__subtitle #{element.title}
-        p.recommendation__text #{element.text}
-    .recommendation__stripe
+    if(element.innerClassName ==='recommendation__inner--2')
+        div(class="recommendation__inner " + element.innerClassName)
+            img(class="recommendation__item" src=require(`../../assets/images/${element.image}`).default, alt=`${element.alt}`)
+            .recommendation__list
+                h3(class="recommendation__subtitle " + element.titleClassName) #{element.title}
+                p(class="recommendation__text " + element.textClassName) #{element.text}
+        .recommendation__stripe
+
+    else
+        .recommendation__inner
+            img(class="recommendation__item" src=require(`../../assets/images/${element.image}`).default, alt=`${element.alt}`)
+            .recommendation__list
+                h3(class="recommendation__subtitle " + element.titleClassName) #{element.title}
+                p(class="recommendation__text " + element.textClassName) #{element.text}
+        .recommendation__stripe

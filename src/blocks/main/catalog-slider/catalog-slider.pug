@@ -1,0 +1,14 @@
+include ../button/button
+
+mixin catalogSlider(element)
+    .catalog__slider-wrapper
+        .catalog__img-box
+            img(class="catolog__img" src=require(`../../assets/images/${element.imageMain}`).default, alt=`${element.altMain}`)
+        .catalog__slide-content
+            h3.catalog__slider-title #{element.title}
+            hr
+            p.catalog__structure Состав:
+            p.catalog__structure-text #{element.structureText}
+            p.catalog__size Размер:
+            p.catalog__size-text #{element.sizeText}
+            +button('catalog__btn', 'Заказать')

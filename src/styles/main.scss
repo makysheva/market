@@ -22,5 +22,12 @@ body{
     font-family: 'Tinos-Regular', 'Alice', sans-serif;
     font-style: normal;
     font-weight: 400;
+    //font-size: calc(18px + (24 - 18) * (100vw - 400px) / (1200 - 400));
     font-size: 16px;
+}
+
+.main{
+    max-width: 1920px;
+    width: 100%;
+    margin: 0 auto;
 }

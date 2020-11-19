@@ -1,0 +1,298 @@
+// .feedback{
+//     &__wrapper{
+//         background: url('../../../assets/images/feedback-form-bg.svg');
+//         background-repeat: no-repeat;
+//         background-size: cover;
+//         max-width: 1150px;
+//         width: 100%;
+//         height: 500px;
+//         margin: 0 auto;
+//         display: flex;
+//         flex-direction: row;
+
+//         &::before{
+//             background: url('../../../assets/images/feedback-sheet-blueberry.svg') no-repeat;
+//             background-size: cover;
+//             width: 330px;
+//             height: 184px;
+//             background-size: 433px 209px;
+//             position: absolute;
+//             content: "";
+//             top: 30%;
+//             left: 68%;
+//         }
+//     }
+
+//     &__bg{
+//         background: url('../../../assets/images/feedback-bg.svg');
+//         background-size: cover;
+//         background-repeat: no-repeat;
+//         max-width: 1920px;
+//         width: 100%;
+//         margin: 0 auto;
+//         padding-top: 124px;
+//         padding-bottom: 37px;
+//         position: relative;
+
+//         &::after{
+//             background: url('../../../assets/images/feedback-sheet.svg');
+//             background-size: cover;
+//             background-repeat: no-repeat;
+//             background-size: 204px 195px;
+//             position: absolute;
+//             content: "";
+//             top: 4%;
+//             width: 300px;
+//             left: 16%;
+//             z-index: -1;
+//             height: 169px;
+//         }
+
+//         &::before{
+//             background: url('../../../assets/images/feedback-blueberry.svg') no-repeat;
+//             background-size: cover;
+//             width: 491px;
+//             height: 249px;
+//             background-size: 484px 233px;
+//             position: absolute;
+//             content: "";
+//             top: 33%;
+//             left: 58%;
+//         }
+//     }
+
+//     &__image-wrapper{
+//         display: flex;
+//         justify-content: center;
+//         max-width: 303px;
+//         width: 100%;
+//         margin: 0 auto;
+
+//         &::before{
+//             background: url('../../../assets/images/feedback-heart.svg') no-repeat;
+//             background-size: cover;
+//             width: 382px;
+//             height: 244px;
+//             background-size: 446px 219px;
+//             position: absolute;
+//             content: "";
+//             top: -4%;
+//             left: 49.3%;
+//             z-index: -1;
+//             cursor: pointer;
+//         }
+
+//         &::after{
+//             background: url('../../../assets/images/feedback-like.svg') no-repeat;
+//             background-size: cover;
+//             width: 329px;
+//             height: 211px;
+//             background-size: 384px 188px;
+//             position: absolute;
+//             content: "";
+//             top: 63%;
+//             left: 28.4%;
+//             z-index: -1;
+//             cursor: pointer;
+//         }
+//     }
+
+//     &__nav{
+//         &::before{
+//             background-image: url('../../../assets/images/feedback-arrow-left.svg');
+//             background-repeat: no-repeat;
+//             content: "";
+//             position: absolute;
+//             top: 78%;
+//             left: 35%;
+//             display: block;
+//             width: 48px;
+//             height: 48px;
+//             cursor: pointer;
+
+//             &:hover{
+//                 background: linear-gradient(180deg, #FFD9CD 0%, #FCB8A3 100%);
+//             }
+//         }
+
+//         &::after{
+//             background-image: url('../../../assets/images/feedback-arrow-right.svg');
+//             background-repeat: no-repeat;
+//             content: "";
+//             position: absolute;
+//             top: 78%;
+//             right: 35%;
+//             display: block;
+//             width: 48px;
+//             height: 48px;
+//             cursor: pointer;
+
+//             &:hover{
+//                 background: linear-gradient(180deg, #FFD9CD 0%, #FCB8A3 100%);
+//             }
+//         }
+//     }
+
+//     &__img{
+//         max-width: 303px;
+//         width: 100%;
+//         height: 600px;
+//     }
+
+//     &__form{
+//         padding: 50px 60px 0 0;
+
+//         &-title{
+//             max-width: 500px;
+//             width: 100%;
+//             font-family: "Alice";
+//             font-style: normal;
+//             font-weight: 400;
+//             font-size: 64px;
+//             line-height: 120%;
+//             color: #FFFFFF;
+//             text-shadow: 0px 4px 6px rgba(0, 0, 0, 0.06);
+//             padding-bottom: 20px;
+//         }
+
+//         &-text{
+//             max-width: 500px;
+//             width: 100%;
+//             font-size: 24px;
+//             line-height: 120%;
+//             color: #FFFFFF;
+//             text-shadow: 0px 4px 6px rgba(0, 0, 0, 0.06);
+//         }
+
+//         &-content{
+//             padding: 36px 0 0 60px;
+//         }
+
+//         &-forms{
+//             display: flex;
+//             flex-direction: row;
+//             flex-wrap: wrap;
+//             max-width: 469px;
+//             width: 100%;
+//             justify-content: space-between;
+//         }
+
+//         &-box{
+//             display: flex;
+//             flex-direction: row;
+//             justify-content: space-between;
+//             margin-top: 15px;
+//         }
+//     }
+
+//     &__wrap{
+//         display: flex;
+//         flex-direction: row;
+//     }
+
+//     &__title{
+//         font-family: "Alice";
+//         font-style: normal;
+//         font-weight: 400;
+//         font-size: 64px;
+//         line-height: 120%;
+//         text-align: center;
+//         color: #333333;
+
+//         &--meta{
+//             color: #FF4B65;
+//             max-width: 780px;
+//             width: 100%;
+//             font-family: "Alice";
+//             font-style: normal;
+//             font-weight: 400;
+//             font-size: 64px;
+//             line-height: 120%;
+//             text-align: center;
+//             margin: 119px auto 36px auto;
+//         }
+//     }
+
+//     &__input{
+//         &-icon{
+//             background: url('../../../assets/images/feedback-user.svg') no-repeat scroll 7px 7px;
+//             background-size: cover;
+//         }
+
+//         &-name{
+//             max-width: 230px;
+//             width: 100%;
+//             background: #F8F8F8;
+//             box-shadow: inset 1px 1px 4px rgba(0, 0, 0, 0.15);
+//             border-radius: 5px;
+//             padding: 19px;
+//         }
+
+//         &-mobile{
+//             background: url('../../../assets/images/feedback-mobile-input.svg') no-repeat scroll 7px 7px;
+//             background-size: cover;
+//         }
+
+//         &-phone{
+//             max-width: 230px;
+//             width: 100%;
+//             background: #F8F8F8;
+//             box-shadow: inset 1px 1px 4px rgba(0, 0, 0, 0.15);
+//             border-radius: 5px;
+//             padding: 19px;
+//         }
+//     }
+
+//     &__textarea{
+//         max-width: 469px;
+//         width: 100%;
+//         background: #F8F8F8;
+//         box-shadow: inset 1px 1px 4px rgba(0, 0, 0, 0.15);
+//         border-radius: 5px;
+//         margin-top: 10px;
+//         padding: 18px 0 0 22px;
+//     }
+
+//     &__button{
+//         padding: 20px 30px;
+//         max-width: 230px;
+//         width: 100%;
+//         background: radial-gradient(57.74% 90.4% at 50% -24.24%, #FFFFFF 0%, #EEEEEE 100%);
+//         box-shadow: 0px 4px 0px #C2C2C2, 0px 32px 20px -25px rgba(255, 255, 255, 0.5), inset 0px 4px 4px rgba(255, 255, 255, 0.25);
+//         border-radius: 10px;
+//         font-weight: 700;
+//         font-size: 18px;
+//         line-height: 120%;
+//         color: #FF4B65;
+//         text-shadow: 1px 1px 0px #FFFFFF;
+//     }
+
+//     &__small{
+//         max-width: 230px;
+//         width: 100%;
+//         font-size: 12px;
+//         line-height: 14px;
+//         color: #FFC2C2;
+//         padding-top: 76px;
+//     }
+
+//     &__mobile{
+//         max-width: 217px;
+//         width: 100%;
+//         font-weight: 700;
+//         font-size: 26px;
+//         line-height: 120%;
+//         padding-bottom: 5px;
+//         color: #FFFFFF;
+
+//         &-text{
+//             font-size: 14px;
+//             line-height: 120%;
+//             color: #FFFFFF;
+//         }
+//     }
+
+//     &__telegram{
+//         padding: 0 8px 0 7px;
+//     }
+// }
