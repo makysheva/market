@@ -4,6 +4,14 @@
 @import "Tinos.scss";
 @import "reset.css";
 
+// max-width: 320px
+// max-width: 375px
+// max width: 425px
+// max-width: 768px
+// max-width: 1024px
+// max-width: 1440px
+// max-width: 1920px
+
 $border: 1px solid #ccc;
 
 .box{
@@ -24,6 +32,7 @@ body{
     font-weight: 400;
     //font-size: calc(18px + (24 - 18) * (100vw - 400px) / (1200 - 400));
     font-size: 16px;
+    transition: 1s ease-out 0.5s;
 }
 
 .main{

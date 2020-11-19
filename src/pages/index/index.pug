@@ -25,7 +25,6 @@ block index-page
                 .header__info
                     a(class="header__link" href="#") Заказать в один клик
                     .header__phone
-                        img(class='phone__img' src=require('../../assets/images/phone.svg').default alt='phone')
                         p.phone__text 8 (999) 888-99-88
 
             .menu__container
@@ -44,6 +43,10 @@ block index-page
 
                         each element in menuList
                             +elementMenu(element)
+        .header__mobile-wrap
+            .header__mobile-phone
+            .header__burger
+                span
     //- main.main
     //-     section.proposal#proposal
     //-             .proposal__wrapper
