@@ -93,14 +93,6 @@ module.exports = {
                 collapseWhitespace: isProd
             },
         }),
-
-        new HtmlWebpackPlugin({
-            filename: 'first.html',
-            template: './pages/first/first.pug',
-            minify: {
-                collapseWhitespace: isProd
-            },
-        }),
         new CleanWebpackPlugin(),
         new CopyWebpackPlugin({
             patterns: [
