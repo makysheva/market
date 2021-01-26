@@ -17,7 +17,6 @@
             height: 172px;
             background-image: url('/assets/images/sheet-top.svg');
             background-size: 283px 163px;
-            //background-size: cover;
             z-index: 1;
             background-repeat: no-repeat;
 
@@ -64,14 +63,7 @@
     }
 
     &__phone {
-        //display: flex;
-        //flex-direction: row;
-        //align-items: center;
         background-image: url('/assets/images/phone.svg');
-        //max-width: 234px;
-        //width: 100%;
-        //height: 24px;
-        //justify-content: space-evenly;
         margin: 0 auto;
         background-repeat: no-repeat;
     }
@@ -80,16 +72,15 @@
         &-wrap {
             display: grid;
             grid-template-columns: 32% 68%;
+            align-items: center;
         }
 
         &-phone {
-            //grid-column-start: 1;
-
             @media (max-width: 768px) {
                 background: url('/assets/images/phone.svg');
                 max-width: 234px;
                 width: 100%;
-                height: 24px;
+                height: 27px;
                 background-repeat: no-repeat;
                 transform: scaleX(-1);
             }
@@ -135,16 +126,10 @@
         color: #ffffff;
         padding-left: 32px;
         padding-right: 10px;
-
-        // @media(max-width: 768px){
-        //     display: none;
-        // }
     }
 }
 
 .header__burger {
-    //grid-column-start: 2;
-
     @media (max-width: 768px) {
         display: flex;
         position: relative;
@@ -277,16 +262,14 @@
             content: '';
             position: absolute;
             top: 10%;
-            left: 407px;
+            left: 36%;
             display: block;
-            width: 100%;
-            height: 790px;
+            width: 128px;
+            height: 99px;
             z-index: -2;
 
             @media (max-width: 768px) {
-                width: 130px;
-                height: 105px;
-                background-size: 136px 96px;
+                background-size: contain;
                 transform: scaleX(-0.8);
                 top: -5%;
                 left: -12%;
@@ -406,6 +389,12 @@
         margin-top: 17px;
         border-radius: 103px;
 
+        @media (max-width: 935px) {
+            width: 292px;
+            height: 79px;
+            font-size: 23px;
+        }
+
         @media (max-width: 768px) {
             width: 218px;
             height: 62px;
@@ -419,6 +408,10 @@
         justify-content: space-around;
         align-items: center;
         margin-top: 21px;
+
+        @media (max-width: 935px) {
+            justify-content: start;
+        }
 
         @media (max-width: 768px) {
             padding-bottom: 24px;
@@ -437,9 +430,15 @@
         align-items: center;
         color: #ff4b65;
 
+        @media (max-width: 935px) {
+            font-size: 20px;
+            line-height: normal;
+        }
+
         @media (max-width: 768px) {
             font-size: 12px;
             padding-left: 5px;
+            line-height: normal;
         }
     }
 
@@ -521,11 +520,6 @@
 
             @media (max-width: 768px) {
                 display: none;
-                // width: 102px;
-                // height: 72px;
-                // top: 51%;
-                // left: 15%;
-                // transform: rotateX(10deg);
             }
         }
     }
@@ -722,8 +716,8 @@
 
         &::before {
             background: url('../../assets/images/suggestion-img.svg') no-repeat;
-            background-size: 892px 570px;
-            max-width: 892px;
+            background-size: contain;
+            max-width: 723px;
             width: 100%;
             height: 570px;
             margin: 0 auto;
@@ -733,9 +727,13 @@
             left: 28%;
             z-index: -1;
 
+            @media (max-width: 1024px) {
+                max-width: 550px;
+            }
+
             @media (max-width: 768px) {
-                background-size: 500px 300px;
-                max-width: 520px;
+                background-size: contain;
+                max-width: 293px;
                 height: 300px;
                 margin: 0 auto;
                 position: absolute;
@@ -799,6 +797,10 @@
         line-height: 120%;
         color: #ffffff;
         text-shadow: 1px 1px 0px #d3001f;
+
+        @media (max-width: 768px) {
+            font-size: 16px;
+        }
     }
 }
 

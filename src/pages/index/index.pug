@@ -46,6 +46,20 @@ block index-page
                     .header__mobile-phone
                     .header__burger
                         span
+                    ul.menu__list--mobile
+                        -
+                            let menuListMobile = [
+                                {title: "Главная", className: "main", link: "#main"},
+                                {title: "Что можно заказать", className: "", link: "#portfolio"},
+                                {title: "Каталог", className: "", link: "#contacts"},
+                                {title: "Подарки", className: "", link: "#contacts"},
+                                {title: "Отзывы", className: "", link: "#contacts"},
+                                {title: "Вопросы клиентов", className: "", link: "#contacts"},
+                                {title: "Доставка и оплата", className: "", link: "#contacts"},
+                            ]
+
+                        each element in menuListMobile
+                            +elementMenu(element)
 
     main.main
         section.proposal#proposal

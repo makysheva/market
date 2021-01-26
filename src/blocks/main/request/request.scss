@@ -79,11 +79,15 @@
                 margin: auto 10px;
             }
 
+            @media (max-width: 560px) {
+                left: 18%;
+            }
+
             @media (max-width: 425px) {
                 left: 10%;
             }
 
-            @media (max-width: 425px) {
+            @media (max-width: 320px) {
                 left: 0%;
             }
         }

@@ -42,14 +42,18 @@
             background-repeat: no-repeat;
             content: '';
             position: absolute;
-            top: 8%;
-            left: 78%;
+            top: 5%;
+            left: 94%;
             display: block;
-            width: 100%;
-            height: 790px;
+            width: 114px;
+            height: 110px;
             z-index: 4;
             transform: rotate(18deg);
-            background-size: 252px 212px;
+            background-size: contain;
+
+            @media (max-width: 1024px) {
+                left: 89%;
+            }
 
             @media (max-width: 768px) {
                 display: none;
@@ -64,9 +68,13 @@
             top: 68%;
             left: 83%;
             display: block;
-            width: 100%;
-            height: 790px;
+            width: 255px;
+            height: 264px;
             z-index: 4;
+
+            @media (max-width: 1024px) {
+                left: 70%;
+            }
 
             @media (max-width: 768px) {
                 content: '';
@@ -75,7 +83,7 @@
                 left: -7%;
                 top: 93%;
                 width: 197px;
-                background-size: 194px 126px;
+                background-size: contain;
                 height: 132px;
                 transform: rotateY(-180deg);
             }
@@ -151,11 +159,11 @@
             content: '';
             position: absolute;
             top: 64%;
-            left: -8%;
-            background-size: 346px 236px;
+            left: 2%;
+            background-size: contain;
             display: block;
-            width: 285px;
-            height: 200px;
+            width: 157px;
+            height: 150px;
             z-index: -1;
 
             @media (max-width: 768px) {
